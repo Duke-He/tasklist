@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<img src="music.png" alt="aaapppp">
+	<script>
+		
+		var obj = {
+			_name1:'jack',
+			_name2: "beew",
+			_name3: "hk",
+			_name4:'kkkll',
+		};
+		// Object.defineProperty(obj,"name",{
+		// 	set: function(val) {
+		// 		console.log(val);
+		// 	},
+		// 	get: function(){
+		// 		console.log(this._name1);
+		// 		return this._name1;
+				
+		// 	}
+		// })
+		// obj = {
+		// 	...obj,
+		// 	get name(){
+		// 		console.log(this._name3);
+		// 	},
+		// 	set name(val){
+		// 		console.log(val);
+		// 	}
+		// }
+		// obj.__defineGetter__("name",function(){
+		// 	return this._name4;
+		// })
+		// console.log(obj.name);
+		// console.dir(obj);
+var arr = [0,1,2,3,4]; 
+let fs = arr.reduce(function (preValue,curValue,index,array) { 
+	console.log(preValue,curValue);
+	return preValue + curValue; 
+});
+	console.log(fs);
+//www.w3cplus.com/javascript/array-part-8.html © w3cplus.com
+		// Promise.resolve(new Promise(function(resolve,reject){resolve(12)})).then(function(data){
+		// 	console.log(data,2222);
+		// })
+
+
+
+	</script>
+</body>
+</html>
