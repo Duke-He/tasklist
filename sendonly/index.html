@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>player</title>
+</head>
+<body>
+	<ul>
+		<li onclick="play()">第一首：<audio id='ado' controls></audio></li>
+		<!-- <li>第二首：<audio src="/music/464446.m4a" controls></audio></li> -->
+	</ul>
+	<script>
+		var ado = document.getElementById('ado');
+		 if(Hls.isSupported()) {
+          var video = document.getElementById('video');
+          var hls = new Hls();
+          hls.loadSource('/music/464446.m4a');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED,function() {
+            ado.play();
+        });
+       }
+       // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+       // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
+       // This is using the built-in support of the plain video element, without using hls.js.
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          ado.src = 'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8';
+          ado.addEventListener('canplay',function() {
+            video.play();
+          });
+        }
+		// let limit = 100000;
+		// let start = 0;
+		// var total=0;
+		// var ado = document.getElementById('ado');
+
+		// function play() {
+		// 	if(start >= total&&total!=0)return;
+		// 	let xhr = new XMLHttpRequest();
+		// 	xhr.open('GET',"/music/464446.m4a");
+		// 	xhr.onload = function (data) {
+		// 		console.log(xhr);
+		// 		total = xhr.getResponseHeader('Content-Range').split("-")[1];
+		// 		// var len = xhr.getResponseHeader('Content-Length');
+		// 		// console.log(range,len);
+		// 		var obj_url = window.URL.createObjectURL(xhr.response);
+		// 		console.log(obj_url);
+		// 		ado.src= obj_url;
+		//     }
+		//     xhr.responseType = 'blob';
+		//     xhr.setRequestHeader("Range",`bytes=${start}-${limit+start-1}`);
+		//     xhr.send();
+			
+		// }
+		// ado.addEventListener("timeupdate",function(){
+		// 	console.log(this.)
+		// })
+	
+	</script>
+</body>
+</html>
