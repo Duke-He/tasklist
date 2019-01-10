@@ -1,6 +1,6 @@
 class Promise{
 	constructor(executor){
-		//promise 有三个装袋 pedding fulfilled rejected
+		//promise 有三个状态 pedding fulfilled rejected
 		//设置promise的初始状态
 		this.state = "pendding";
 		this.value = null;	
